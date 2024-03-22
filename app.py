@@ -3,14 +3,15 @@ from flask.views import MethodView
 import random
 import pickle
 app = Flask(__name__)
-@app.route('/', methods=['GET'])
+@app.route('/sample', methods=['GET'])
 def index():
   n = random.randrange(5,10)
   data = []
   for n in range(n):
     data.append(random.randrange(0,100))
   return render_template('index.html', title='Template Sample', message='これはサンプルのページです',data=data)
-@app.route('/predict', methods=['GET','POST'])
+
+@app.route('/', methods=['GET','POST'])
 def predict():
   if request.method == 'GET':
    msg = 'コロナの感染確率を予測したい地域と情報を入力してください'
