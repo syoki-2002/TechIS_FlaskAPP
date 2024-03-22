@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+ 
+{% block title %}
+ Predict_Page
+{% endblock %}
+ 
+{% block headline %}
+{{ title }}
+{% endblock %}
+ 
+{% block content %}
+<p>{{ message }}</p>
+<form method="post" action="/predict">
+  <ul>
+    <li>
+      <p>人口：<input type="number" name="人口" value="{{ 人口 }}"  min="0"></p>
+    </li>
+    <li>
+      <p>飲食店の数：<input type="number" name="飲食店の数" value="{{ 飲食店の数 }}" min="0"></p>
+    </li>
+    <li>
+      <p>バス停の数：<input type="number" name="バス停の数" value="{{ バス停の数 }}"   min="0"></p>
+    </li>
+    <li>
+      <p>駅数：<input type="number" name="駅数" value="{{ 駅数 }}"  min="0"></p>
+    </li>
+    <li>
+      <p>観光スポット：<input type="number" name="観光スポット" value="{{ 観光スポット }}"  min="0"></p>
+    </li>
+    <li>
+      <p>宿泊施設：<input type="number" name="宿泊施設" value="{{ 宿泊施設 }}"  min="0"></p>
+    </li>
+    <li>
+      <p>土地面積:<input type="number" name="土地面積" value="{{土地面積}}" step=0.001 min="0"></p>
+    </li>
+    <li><p>都道府県：
+      <select name="pref"   value="{{ 都道府県 }}"> 
+      <option value="1">北海道</option>
+      <option value="2">青森県</option>
+      <option value="3">岩手県</option>
+      <option value="4">宮城県</option>
+      <option value="5">秋田県</option>
+      <option value="6">山形県</option>
+      <option value="7">福島県</option>
+      <option value="8">茨城県</option>
+      <option value="9">栃木県</option>
+      <option value="10">群馬県</option>
+      <option value="11">埼玉県</option>
+      <option value="12">千葉県</option>
+      <option value="13">東京都</option>
+      <option value="14">神奈川県</option>
+      <option value="15">新潟県</option>
+      <option value="16">富山県</option>
+      <option value="17">石川県</option>
+      <option value="18">福井県</option>
+      <option value="19">山梨県</option>
+      <option value="20">長野県</option>
+      <option value="21">岐阜県</option>
+      <option value="22">静岡県</option>
+      <option value="23">愛知県</option>
+      <option value="24">三重県</option>
+      <option value="25">滋賀県</option>
+      <option value="26">京都府</option>
+      <option value="27">大阪府</option>
+      <option value="28">兵庫県</option>
+      <option value="29">奈良県</option>
+      <option value="30">和歌山県</option>
+      <option value="31">鳥取県</option>
+      <option value="32">島根県</option>
+      <option value="33">岡山県</option>
+      <option value="34">広島県</option>
+      <option value="35">山口県</option>
+      <option value="36">徳島県</option>
+      <option value="37">香川県</option>
+      <option value="38">愛媛県</option>
+      <option value="39">高知県</option>
+      <option value="40">福岡県</option>
+      <option value="41">佐賀県</option>
+      <option value="42">長崎県</option>
+      <option value="43">熊本県</option>
+      <option value="44">大分県</option>
+      <option value="45">宮崎県</option>
+      <option value="46">鹿児島県</option>
+      <option value="47">沖縄県</option>
+      </select></p>
+</li>
+  </ul>
+<input type="submit">
+</form>
+{% endblock %}
+ 
+{% block footer %}
+copyright 2021 Yuki_Tokieda
+{% endblock %}

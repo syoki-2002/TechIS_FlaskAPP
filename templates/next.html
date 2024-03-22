@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Next_Page
+{% endblock %}
+
+{% block headline %}
+{{title}} 
+{% endblock %}
+
+{% block content %}
+<p>{{message}}</p>
+<form method="post" action="/hello/"></form>
+<imput type="text" name="send" value="{{send}}"></imput>
+
+{% endblock %}
+
+{% block footer %}
+copyright 2021 Yuki_Tokieda
+{% endblock %}
