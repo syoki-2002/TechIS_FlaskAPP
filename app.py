@@ -28,7 +28,8 @@ def predict():
     x = [[int(x1), int(x2), int(x3), int(x4), int(x5), int(x6),float(x7)]]
     corona = reg.predict(x)
     corona = round(corona[0], 2)
-    corona = f'コロナの感染確率：コロナの感染確率は{corona}です。'
+    corona_rate = 0 if int(x1)==0 else max(min(round(corona/int(x1),2),100),0)
+    corona = f'コロナの感染確率：コロナの感染確率は{corona_rate}%です。'
     return render_template('predict.html', title='Predict Page', message=corona, 人口=x1, 飲食店の数=x2, バス停の数=x3, 駅数=x4, 観光スポット=x5, 宿泊施設=x6, 土地面積=x7)
 
 @app.route('/next', methods=['GET'])
