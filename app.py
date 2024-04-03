@@ -9,7 +9,7 @@ def index():
   data = []
   for n in range(n):
     data.append(random.randrange(0,100))
-  return render_template('index.html', title='Template Sample', message='これはサンプルのページです',data=data)
+  return render_template('index.html', message='これはサンプルのページです',data=data)
 
 @app.route('/', methods=['GET','POST'])
 def predict():
